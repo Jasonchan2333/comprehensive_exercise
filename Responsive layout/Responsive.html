@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <link rel="stylesheet" href="./res.css">
+    <script src="//at.alicdn.com/t/c/font_4046891_ry48eimpnap.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navibar">
+            <a href="" class="logo">JasonChan Dev Crateive</a>
+            <ul class="links">
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Serverice</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <a href="" class="action_btn">Get Started</a>
+            <svg class="icon iconsize-big toggle_btn" aria-hidden="true">
+                <use xlink:href="#icon-caidan"></use>
+            </svg>
+        </div>
+
+        <div class="dropdown_menu ">
+            <li><a href="" class="link">Home</a></li>
+            <li><a href="" class="link">Serverice</a></li>
+            <li><a href="" class="link">Contact</a></li>
+            <li><a href="" class="action_btn ">Get Started</a></li>
+        </div>
+    </header>
+
+    <script>
+        const toggleBtn = document.querySelector(".toggle_btn")
+        const dropdown_menu = document.querySelector(".dropdown_menu")
+        toggleBtn.onclick = () => {
+            console.log('dropdown');
+            dropdown_menu.classList.toggle("open")
+
+        }
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+}
+
+body {
+    background-image: url('	https://img0.baidu.com/it/u=3266114238,3321840150&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800');
+    height: 100vh;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+}
+
+.icon {
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.iconsize-big {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.iconsize-mini {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.navibar li {
+    list-style: none;
+}
+
+header {
+    position: relative;
+    padding: 0.2rem;
+}
+
+.navibar {
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+    /* background-color: #fff; */
+}
+
+.navibar .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navibar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.navibar a:hover {
+    color: orangered;
+}
+
+.navibar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navibar .toggle_btn {
+    display: none;
+}
+
+.navibar .action_btn {
+    background-color: orange;
+    border-radius: 100px;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+    font-size: bold;
+    transition: all 0.1s linear;
+}
+
+.navibar .action_btn:hover {
+    scale: 1.07;
+    color: white;
+}
+
+.navibar .action_btn:active {
+    scale: 0.95;
+    color: white;
+}
+
+
+/* 下拉菜单 */
+
+.dropdown_menu {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 0.2rem;
+    position: absolute;
+    right: 2rem;
+    width: 260px;
+    top: 40px;
+    backdrop-filter: blur(20px);
+    display: none;
+}
+
+.open {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.dropdown_menu .action_btn {
+    background-color: orange;
+    border-radius: 100px;
+    padding: 0.2rem 1rem;
+    width: 90%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: bold;
+    transition: all 0.1s linear;
+}
+
+.dropdown_menu .action_btn:hover {
+    scale: 1.07;
+    color: white;
+}
+
+.dropdown_menu .action_btn:active {
+    scale: 0.95;
+    color: white;
+}
+
+.dropdown_menu li {
+    list-style: none;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown_menu .link {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+.dropdown_menu .link:hover {
+    color: rgb(240, 240, 240);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 0.7rem;
+    border-radius: 200px;
+}
+
+
+/* 响应式设计 */
+
+@media(max-width:690px) {
+    .navibar .links,
+    .navibar .action_btn {
+        display: none;
+    }
+    .navibar .toggle_btn {
+        display: block;
+    }
+}
