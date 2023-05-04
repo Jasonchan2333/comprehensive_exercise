@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .box-container {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-color: #a97777;
+        }
+        
+        .box1 {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            top: 50%;
+            left: 50%;
+            background-color: #000000;
+            border-radius: 500px;
+        }
+        
+        .text-container {
+            width: 100%;
+            height: 50vh;
+            background-color: #4d5843;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .text-container span {
+            font-size: 27px;
+            font-weight: bold;
+            margin: 2px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-container">
+        <div class="box1"></div>
+    </div>
+
+    <div class="text-container">
+        <span>J</span>
+        <span>A</span>
+        <span>S</span>
+        <span>O</span>
+        <span>N</span>
+        <span>-</span>
+        <span>C</span>
+        <span>H</span>
+        <span>E</span>
+        <span>N</span>
+        <button class="startBtn">触发器</button>
+    </div>
+
+    <!--CDN引入 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>/
+    <script>
+        const box1 = document.querySelector(".box1")
+
+
+        const timeline1 = gsap.timeline({ //时间线
+            repeat: -1,
+            repeatDelay: 1,
+        });
+
+
+
+        timeline1.to(
+                '.box1', {
+                    height: 35
+                }
+            )
+            .to('.box1', {
+                height: 30
+            })
+            .to(
+                '.box1', {
+                    width: 170
+                }
+            ).to(
+                '.box1', {
+                    width: 100,
+                }
+            ) //链式
+
+        const startBtn = document.querySelector(".startBtn")
+
+        startBtn.onclick = () => {
+            const timeline2 = gsap.timeline({
+                repeat: -1, //无限重复
+                repeatDelay: 1, //重复延迟
+
+            });
+            timeline2.staggerFromTo('span', 0.9, {
+                ease: Back.easeOut.config(1.8),
+                opacity: 0,
+                rotation: 180,
+                y: -100
+            }, {
+                ease: Back.easeOut.config(1.8),
+                opacity: 1,
+                rotation: 360,
+                y: 0
+            }, .1, '+=0', () => {
+                console.log('tm2end');
+                timeline2.pause() //停止
+            })
+        }
+    </script>
+</body>
+
+
+
+</html>
