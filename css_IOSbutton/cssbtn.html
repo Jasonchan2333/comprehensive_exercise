@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="light_index.css" id="theme-link">
+</head>
+
+<body>
+    <button id="toggle-theme">深/浅</button>
+    <label for="toggle">
+        <input type="checkbox" id="toggle">
+        <span class="btnLayout"></span>
+    </label>
+
+</body>
+
+<script>
+    var theme = ["dark", "light"]
+    var isLight = false
+
+
+    function toggleTheme() {
+        const link = document.getElementById("theme-link");
+        isLight = !isLight
+        if (isLight) {
+            console.log(theme[0]);
+            link.href = `${theme[0]}_index.css`;
+        } else {
+            console.log(theme[1]);
+            link.href = `${theme[1]}_index.css`;
+        }
+
+
+    }
+
+    const toggleButton = document.getElementById("toggle-theme");
+    toggleButton.addEventListener("click", toggleTheme);
+</script>
+
+</html>
